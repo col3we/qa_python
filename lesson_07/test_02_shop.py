@@ -1,6 +1,6 @@
 from selenium import webdriver
 
-from .shop_pages import CartPage, CheckoutPage, LoginPage, ProductsPage
+from shop_pages import CartPage, CheckoutPage, LoginPage, ProductsPage
 
 
 def test_saucedemo_purchase():

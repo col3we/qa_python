@@ -61,7 +61,9 @@ class CheckoutPage:
     ):
         wait = WebDriverWait(self.driver, 10)
         wait.until(
-            EC.visibility_of_element_located(self.first_name_field)
+            EC.visibility_of_element_located(
+                self.first_name_field
+            )
         ).send_keys(first_name)
         self.driver.find_element(*self.last_name_field).send_keys(
             last_name

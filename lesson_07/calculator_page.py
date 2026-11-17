@@ -25,9 +25,13 @@ class CalculatorPage:
         xpath = f"//span[text()='{label}']"
         self.driver.find_element(By.XPATH, xpath).click()
 
-    def get_result(self, timeout: int = 50) -> str:
+    def get_result(
+        self, expected_result: str = "15", timeout: int = 50
+    ) -> str:
         wait = WebDriverWait(self.driver, timeout)
         wait.until(
-            EC.text_to_be_present_in_element(self.screen_locator, "15")
+            EC.text_to_be_present_in_element(
+                self.screen_locator, expected_result
+            )
         )
         return self.driver.find_element(*self.screen_locator).text

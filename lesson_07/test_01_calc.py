@@ -1,6 +1,6 @@
 from selenium import webdriver
 
-from .calculator_page import CalculatorPage
+from calculator_page import CalculatorPage
 
 
 def test_slow_calculator():
@@ -17,7 +17,7 @@ def test_slow_calculator():
         calc_page.click_button("8")
         calc_page.click_button("=")
 
-        result = calc_page.get_result(50)
+        result = calc_page.get_result("15", 50)
         assert result == "15"
 
     finally:
